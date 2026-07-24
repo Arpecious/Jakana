@@ -1,0 +1,20 @@
+# Demonstrates json and collections
+use json
+use collections
+
+fn run_json() {
+    echo "--- JSON & Data ---"
+    
+    data = {"name": "Jakana", "type": "language", "year": 2024}
+    json_str = dumps(data)
+    echo json_str
+    
+    parsed = loads(json_str)
+    echo parsed["name"]
+    
+    items = ["a", "b", "c", "a", "b", "a"]
+    counts = Counter(items)
+    echo counts
+}
+
+run_json()

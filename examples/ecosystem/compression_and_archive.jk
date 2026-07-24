@@ -1,0 +1,21 @@
+# Demonstrates zlib, gzip, base64
+use zlib
+use gzip
+use base64
+
+fn run_compression() {
+    echo "--- Compression & Archive ---"
+    
+    data = b"Jakana is a language that transpiles to Python. Jakana is a language that transpiles to Python."
+    
+    compressed = compress(data)
+    echo len(compressed)
+    
+    decompressed = decompress(compressed)
+    echo len(decompressed)
+    
+    b64 = b64encode(compressed)
+    echo b64
+}
+
+run_compression()

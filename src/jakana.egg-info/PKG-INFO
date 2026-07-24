@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: jakana
+Version: 1.0.0
+Summary: The Jakana programming language
+Requires-Python: >=3.11

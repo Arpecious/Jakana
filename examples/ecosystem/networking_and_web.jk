@@ -1,0 +1,25 @@
+# Demonstrates urllib.parse, html, ipaddress
+use urllib.parse
+use html
+use ipaddress
+
+fn run_networking() {
+    echo "--- Networking & Web ---"
+    
+    url = "https://example.com/search?q=jakana lang"
+    parsed = urlparse(url)
+    echo parsed
+    
+    qs = {"q": "jakana lang", "page": 1}
+    encoded = urlencode(qs)
+    echo encoded
+    
+    dirty = "<h1>Hello & welcome</h1>"
+    escaped = escape(dirty)
+    echo escaped
+    
+    ip = ip_address("192.168.1.1")
+    echo ip.is_private
+}
+
+run_networking()

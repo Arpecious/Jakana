@@ -1,0 +1,26 @@
+# Demonstrates platform, sys
+use platform
+use sys
+
+fn run_sys() {
+    echo "--- System & Platform ---"
+    
+    sys_name = system()
+    echo sys_name
+    
+    rel = release()
+    echo rel
+    
+    ver = version()
+    echo ver
+    
+    arch = machine()
+    echo arch
+    
+    py_ver = python_version()
+    echo py_ver
+    
+    echo sys.platform
+}
+
+run_sys()

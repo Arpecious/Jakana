@@ -1,0 +1,33 @@
+# Demonstrates math and statistics modules in Jakana
+use math
+use statistics
+
+fn run_math_stats() {
+    echo "--- Math & Stats ---"
+    
+    p = math.pi
+    e_val = math.e
+    echo p
+    echo e_val
+    
+    root = sqrt(16)
+    echo root
+    
+    sine = sin(p / 2)
+    echo sine
+    
+    data = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    m = mean(data)
+    echo m
+    
+    med = median(data)
+    echo med
+    
+    std = stdev(data)
+    echo std
+    
+    # Pipeline
+    data |> sum |> echo
+}
+
+run_math_stats()

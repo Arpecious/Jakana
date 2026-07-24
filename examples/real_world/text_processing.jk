@@ -1,0 +1,31 @@
+# Example: Text Processing across multiple libraries
+# Demonstrates short, readable code mixing functions and pipelines
+
+use re: sub
+use collections: Counter
+
+fn clean_and_count(text) {
+    # Short variables for clarity
+    lower_text = text |> lower
+    
+    # Standard function call where it makes sense (re.sub expects string as 3rd arg)
+    cleaned = sub(r"[^\w\s]", "", lower_text)
+    
+    # Pipeline used for string methods and functional transformations
+    words = cleaned |> split
+    counts = Counter(words)
+    return counts
+}
+
+fn run() {
+    sample = "Jakana is simple! Jakana is fast. It uses Python, yes Python!"
+    echo "--- Word Frequencies ---"
+    
+    # Clean and count words
+    result = clean_and_count(sample)
+    
+    # Print the top 3 most common words
+    result |> most_common(3) |> echo
+}
+
+run()

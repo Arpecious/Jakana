@@ -1,0 +1,26 @@
+# Jakana Full Python Ecosystem Integration Demo
+use math
+use random
+use json
+use os
+
+# 1. Math Library
+val = 144
+echo sqrt(val)
+
+# 2. Random Library
+number = randint(1, 100)
+echo number
+
+# 3. JSON Library
+payload = dumps({"status": "success", "value": number})
+echo payload
+
+# 4. OS Library
+cwd = getcwd()
+echo cwd
+
+# 5. Multiline Pipeline with Ecosystem Functions
+[10, 20, 30, 40, 50]
+    |> sum
+    |> echo

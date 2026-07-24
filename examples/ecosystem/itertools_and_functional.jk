@@ -1,0 +1,27 @@
+# Demonstrates itertools and functools
+use itertools
+use functools
+
+fn run_functional() {
+    echo "--- Itertools & Functional ---"
+    
+    c = chain([1, 2], [3, 4])
+    echo list(c)
+    
+    perms = permutations([1, 2, 3], 2)
+    echo list(perms)
+    
+    combs = combinations([1, 2, 3, 4], 2)
+    echo list(combs)
+    
+    fn add(x, y) {
+        return x + y
+    }
+    
+    res = reduce(add, [1, 2, 3, 4, 5])
+    echo res
+    
+    [1, 2, 3, 4] |> sum |> echo
+}
+
+run_functional()

@@ -1,0 +1,11 @@
+{
+  "$schema": "vscode://schemas/iconchoosertheme",
+  "iconDefinitions": {
+    "_file": {
+      "iconPath": "./jakana-file-icon.svg"
+    }
+  },
+  "fileExtensions": {
+    "jk": "_file"
+  }
+}

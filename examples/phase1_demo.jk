@@ -1,0 +1,19 @@
+use math
+
+number = 25
+root = sqrt(number)
+
+echo root
+
+if root == 5 {
+    echo "verified"
+}
+fn square(X) {
+    return X*X
+}
+
+echo square(5)
+
+[1,2,3,4,5]
+    |> sum
+    |> echo

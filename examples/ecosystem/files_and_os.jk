@@ -1,0 +1,27 @@
+# Demonstrates os, pathlib, tempfile, shutil
+use os
+use pathlib
+use tempfile
+use shutil
+
+fn run_files() {
+    echo "--- Files & OS ---"
+    
+    cwd = getcwd()
+    echo cwd
+    
+    d = mkdtemp()
+    echo d
+    
+    filepath = d + "/test.txt"
+    p_obj = Path(filepath)
+    p_obj.write_text("Hello Jakana!")
+    
+    content = p_obj.read_text()
+    echo content
+    
+    rmtree(d)
+    echo "Cleaned up"
+}
+
+run_files()

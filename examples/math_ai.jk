@@ -1,0 +1,18 @@
+# Jakana AI & Scientific Math Example
+use python math
+use python numpy as np
+
+let number = 25
+let root = math.sqrt(number)
+print("Square root of 25 is:")
+print(root)
+
+if root == 5:
+    print("Verification successful: 5 * 5 = 25")
+else:
+    print("Verification failed")
+end
+
+let arr = np.array([1, 2, 3, 4, 5])
+print("NumPy array sum:")
+print(np.sum(arr))

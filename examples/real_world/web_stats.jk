@@ -1,0 +1,31 @@
+# Example: Web parsing and statistics
+# Shows cross-library operations: urllib for networking, json for parsing, statistics for math
+
+use urllib.request: urlopen
+use json: loads
+use statistics: mean, stdev
+
+fn run() {
+    # 1. Fetch JSON data (mock URL for safety, we'll use a local string but pretend it's a request)
+    # response = urlopen("https://api.example.com/data") |> read |> decode("utf-8")
+    
+    response = '{"results": [10.5, 12.1, 9.8, 11.2, 10.9, 12.5, 9.1]}'
+    
+    # 2. Parse the JSON string into a Python dictionary
+    data = loads(response)
+    
+    # 3. Extract the array and calculate stats
+    values = data["results"]
+    
+    avg = mean(values)
+    dev = stdev(values)
+    
+    echo "--- Web Data Stats ---"
+    echo "Average:"
+    avg |> round(2) |> echo
+    
+    echo "Deviation:"
+    dev |> round(2) |> echo
+}
+
+run()

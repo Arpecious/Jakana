@@ -1,0 +1,80 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/701a1eac6e8b3f7c0c77/raw/tmlanguage.json",
+  "name": "Jakana",
+  "scopeName": "source.jakana",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#keywords" },
+    { "include": "#constants" },
+    { "include": "#functions" },
+    { "include": "#variables" },
+    { "include": "#operators" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.jakana",
+          "match": "#.*$"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.jakana",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        { "name": "constant.character.escape.jakana", "match": "\\\\." }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.jakana",
+          "match": "\\b(let|func|fn|if|else|for|while|return|use|python|end)\\b"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.jakana",
+          "match": "\\b(true|false|null)\\b"
+        },
+        {
+          "name": "constant.numeric.jakana",
+          "match": "\\b\\d+(\\.\\d+)?\\b"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function.jakana",
+          "match": "\\b(fn|print)\\s*([A-Za-z_]\\w*)?"
+        },
+        {
+          "name": "support.function.jakana",
+          "match": "\\b(print)\\b"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.jakana",
+          "match": "\\b[A-Za-z_]\\w*\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.jakana",
+          "match": "(==|!=|<=|>=|=|\\+|-|\\*|/|<|>)"
+        }
+      ]
+    }
+  }
+}

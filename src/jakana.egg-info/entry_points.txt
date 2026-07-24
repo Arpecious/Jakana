@@ -1,0 +1,2 @@
+[console_scripts]
+jakana = jakana.cli:main

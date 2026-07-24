@@ -1,0 +1,31 @@
+# Demonstrates hashlib, base64, secrets, uuid
+use hashlib
+use base64
+use secrets
+use uuid
+
+fn run_crypto() {
+    echo "--- Crypto & Encoding ---"
+    
+    data = b"Jakana secret"
+    
+    m = md5(data)
+    echo m.hexdigest()
+    
+    s256 = sha256(data)
+    echo s256.hexdigest()
+    
+    encoded = b64encode(data)
+    echo encoded
+    
+    decoded = b64decode(encoded)
+    echo decoded
+    
+    tok = token_hex(16)
+    echo tok
+    
+    u = uuid4()
+    echo u
+}
+
+run_crypto()

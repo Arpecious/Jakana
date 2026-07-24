@@ -1,0 +1,23 @@
+# Demonstrates time, calendar
+use time
+use calendar
+
+fn run_time() {
+    echo "--- Datetime & Time ---"
+    
+    current = time()
+    echo current
+    
+    start = time()
+    sleep(0.1)
+    end = time()
+    
+    diff = end - start
+    echo diff
+    
+    cal = TextCalendar()
+    m = cal.formatmonth(2024, 1)
+    echo m
+}
+
+run_time()

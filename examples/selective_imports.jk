@@ -1,0 +1,40 @@
+# Example demonstrating selective imports and intelligent pipelines
+
+use time: time, sleep
+use calendar: TextCalendar
+
+fn add_one(x) {
+    return x + 1
+}
+
+fn run_time() {
+    echo "--- Intelligent Pipelines & Selective Imports ---"
+
+    start = time()
+    sleep(0.1)
+    
+    # 1. Standard arithmetic
+    diff = time() - start
+    echo diff
+
+    # 2. Method pipeline
+    # formatmonth is NOT a known free function, so it becomes TextCalendar().formatmonth(2024, 1)
+    TextCalendar()
+        |> formatmonth(2024, 1)
+        |> echo
+
+    # 3. Free function pipeline
+    # sum is a builtin, add_one is user-defined
+    [1, 2, 3] 
+        |> sum 
+        |> add_one 
+        |> echo
+
+    # 4. Method pipeline with standard types
+    "  jakana is functional  "
+        |> strip
+        |> upper
+        |> echo
+}
+
+run_time()

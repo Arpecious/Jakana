@@ -1,0 +1,37 @@
+{
+  "name": "jakana-language-support",
+  "displayName": "Jakana Language Support",
+  "description": "Syntax highlighting and language configuration for Jakana.",
+  "version": "1.0.0",
+  "publisher": "jakana-lang",
+  "license": "MIT",
+  "icon": "./icon.png",
+  "engines": {
+    "vscode": ">=1.85.0"
+  },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "jakana",
+        "aliases": ["Jakana", "jakana"],
+        "extensions": [".jk"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "jakana",
+        "scopeName": "source.jakana",
+        "path": "./syntaxes/jakana.tmLanguage.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "jakana-file-icons",
+        "label": "Jakana File Icons",
+        "path": "./jakana-icon-theme.json"
+      }
+    ]
+  }
+}

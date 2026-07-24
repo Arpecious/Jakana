@@ -1,0 +1,32 @@
+# Demonstrates string, re, and textwrap modules
+use string
+use re
+use textwrap
+
+fn run_strings() {
+    echo "--- Strings & Text ---"
+    
+    letters = string.ascii_letters
+    echo letters
+    
+    text = "The quick brown fox jumps over the lazy dog"
+    
+    # Regex
+    pattern = "fox"
+    match_res = search(pattern, text)
+    if match_res {
+        echo "Found fox!"
+    } else {
+        echo "No fox"
+    }
+    
+    words = findall("\\w+", text)
+    echo words
+    
+    # Textwrap
+    long_text = "This is a very long text that we might want to wrap to a specific width so it looks nice on the screen."
+    wrapped = wrap(long_text, 20)
+    echo wrapped
+}
+
+run_strings()

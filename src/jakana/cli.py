@@ -1,4 +1,4 @@
-"""Command-line interface for Jakana."""
+""Command-line interface for Jakana.""
 
 import argparse
 import sys
@@ -43,17 +43,15 @@ def format_natural_error(filename: str, error: Exception, source_lines: list) ->
         code_snippet = f"\n  Source Code Line {line_num}:\n    {source_lines[line_num - 1].strip()}\n"
 
     report = (
-        f"\n========================================================\n"
         f"  [Jakana Natural Diagnostic Error]\n"
         f"  File : {filename}\n"
         f"  Line : {line_num or 'N/A'}\n"
-        f"--------------------------------------------------------\n"
+        f"-------------------------------------------------------\n"
         f"  What went wrong:\n"
         f"    {explanation}\n"
         f"{code_snippet}"
         f"  How to fix it:\n"
         f"    -> {fix_suggestion}\n"
-        f"========================================================\n"
     )
     return report
 

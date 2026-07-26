@@ -1,4 +1,4 @@
-""Command-line interface for Jakana.""
+"""Command-line interface for Jakana."""
 
 import argparse
 import sys
